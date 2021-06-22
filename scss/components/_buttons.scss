@@ -1,0 +1,35 @@
+@use '../utils' as *;
+
+%btn {
+  display: inline-block;
+  border: none;
+  outline: none;
+  color: $light-color;
+  cursor: pointer;
+  @extend %transition;
+
+  @include pseudo(after, '\f061', relative, initial, initial, initial, initial) {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    padding-left: 3rem;
+  }
+
+  &:hover {
+    background: $gray-color;
+    color: $text-color;
+  }
+}
+%btn-normal {
+  @extend %btn;
+  padding: 1rem 2rem;
+  font-size: font-size(s);
+}
+
+.btn-brown {
+  @extend %btn-normal;
+  background: $brown-color;
+}
+.btn-blue {
+  @extend %btn-normal;
+  background: $blue-color;
+}

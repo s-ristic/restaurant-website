@@ -1,0 +1,77 @@
+@use '../utils' as *;
+
+.facebook-icon {
+  --code: '\f39e';
+  --font-family: 'Font Awesome 5 Brands';
+  --font-weight: 900;
+  @extend %social-icon;
+}
+
+.twitter-icon {
+  --code: '\f099';
+  --font-family: 'Font Awesome 5 Brands';
+  --font-weight: 900;
+  @extend %social-icon;
+}
+
+.instagram-icon {
+  --code: '\f16d';
+  --font-family: 'Font Awesome 5 Brands';
+  --font-weight: 900;
+  @extend %social-icon;
+}
+
+.arrow-up-icon {
+  --code: '\f062';
+  --font-family: 'Font Awesome 5 Free';
+  --font-weight: 900;
+  @extend %social-icon;
+}
+
+.tripadvisor-icon {
+  --code: '\f262';
+  --font-family: 'Font Awesome 5 Brands';
+  --font-weight: 900;
+  --text: 'Tripadvisor';
+  @extend %social-icon;
+  @extend %text-icon;
+}
+
+.phone-icon {
+  --code: '\f879';
+  --font-family: 'Font Awesome 5 Free';
+  --font-weight: 900;
+  --text: '+41 22 734 41 00';
+  @extend %social-icon;
+  @extend %text-icon;
+}
+
+%social-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: border-radius(circle);
+  background: $brown-color;
+  color: $light-color;
+  @extend %transition;
+
+  &:hover {
+    opacity: 0.5;
+  }
+
+  @include pseudo(before, var(--code), absolute, 50%, 50%, initial, initial) {
+    font-family: var(--font-family);
+    font-weight: var(--font-weight);
+    transform: translate(-50%, -50%);
+    font-size: font-size(s);
+  }
+}
+
+%text-icon {
+  @include pseudo(after, var(--text), relative, initial, initial, initial, initial) {
+    color: $brown-color;
+    font-weight: font-weight(bold);
+    padding-left: 3.3rem;
+    line-height: 3rem;
+    white-space: nowrap;
+  }
+}

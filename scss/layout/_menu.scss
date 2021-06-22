@@ -1,0 +1,214 @@
+@use '../utils' as *;
+
+.menu {
+  //background: $gray-color;
+  background: url('../images/menu-bg.png') center/100% 100%;
+  padding: 6rem 3rem;
+
+  @include mq(lg) {
+    padding: 9rem 14rem 12rem;
+  }
+
+  &__top {
+    @include flex(column, center, flex-start);
+
+    @include mq(lg) {
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    ul {
+      display: flex;
+      opacity: 0.5;
+      margin-bottom: 2rem;
+
+      @include mq(lg) {
+        margin-bottom: 0;
+      }
+
+      li {
+        margin-right: 1rem;
+      }
+    }
+    > a {
+      background: none;
+
+      @include mq(lg) {
+        margin-left: 25rem;
+      }
+
+      &::before {
+        color: $brown-color;
+      }
+
+      &::after {
+        font-family: font-family(serif);
+        font-size: font-size(l);
+        font-weight: font-weight(regular);
+        color: $text-color;
+        padding-left: 2.5rem;
+      }
+    }
+  }
+
+  &__center {
+    @include flex(column, center, flex-start);
+    margin: 5rem 0 10rem;
+
+    @include mq(lg) {
+      flex-direction: row-reverse;
+      align-items: center;
+      margin: 10rem 0 15rem;
+    }
+
+    &Text {
+      position: relative;
+      width: 100%;
+      margin-bottom: 5rem;
+
+      @include mq(lg) {
+        width: 60%;
+        max-width: 40rem;
+        margin-left: 10rem;
+        margin-bottom: 0;
+      }
+
+      img:first-of-type {
+        top: -4rem;
+        right: 3rem;
+        width: 6rem;
+        height: 6rem;
+
+        @include mq(lg) {
+          top: -2rem;
+          right: 0;
+        }
+      }
+      img:last-of-type {
+        top: 0;
+        right: -3rem;
+        width: 10rem;
+        height: 10rem;
+
+        @include mq(lg) {
+          right: -10rem;
+        }
+      }
+    }
+
+    &ImageBox {
+      position: relative;
+      min-width: 20rem;
+      height: 20rem;
+      align-self: center;
+
+      @include mq(lg) {
+        align-self: initial;
+        min-width: 40rem;
+        height: 40rem;
+      }
+
+      .menu__bigImage {
+        z-index: 1;
+      }
+
+      .menu__pepper {
+        top: 10rem;
+        left: -15rem;
+        width: 10rem;
+        height: 10rem;
+        object-fit: contain;
+      }
+      .menu__tomato {
+        bottom: -2rem;
+        left: -5rem;
+        width: 10rem;
+        height: 10rem;
+        object-fit: contain;
+      }
+      .menu__lemon {
+        bottom: -5rem;
+        right: -3rem;
+        width: 10rem;
+        height: 10rem;
+        object-fit: contain;
+      }
+      .menu__carrot {
+        bottom: -8rem;
+        right: 10rem;
+        width: 10rem;
+        height: 10rem;
+        object-fit: contain;
+      }
+    }
+  }
+
+  &__bottom {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6rem;
+    text-align: center;
+    max-width: 40rem;
+    margin: 0 auto;
+
+    @include mq(lg) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      max-width: initial;
+    }
+
+    &Column {
+      padding: 0 1rem 3rem;
+      z-index: 0;
+
+      @include pseudo($top: 8rem, $height: calc(100% - 8rem)) {
+        background: #fff;
+        border-top-left-radius: 6rem;
+        border-bottom-right-radius: 6rem;
+        opacity: 0;
+        z-index: -1;
+        @extend %transition;
+      }
+
+      &:hover::before {
+        opacity: 1;
+      }
+
+      &:hover p {
+        opacity: 1;
+      }
+
+      &:hover &Number {
+        background: $blue-color;
+      }
+
+      &:hover img {
+        box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.2);
+      }
+
+      img {
+        position: relative;
+        width: 16rem;
+        height: 16rem;
+        border-radius: border-radius(circle);
+        margin: 0 auto;
+        @extend %transition;
+      }
+
+      &Number {
+        display: block;
+        font-size: font-size(s);
+        color: $light-color;
+        background: $brown-color;
+        width: 4rem;
+        height: 4rem;
+        text-align: center;
+        line-height: 4rem;
+        border-top-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        @extend %transition;
+      }
+    }
+  }
+}

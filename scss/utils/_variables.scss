@@ -1,0 +1,47 @@
+$brown-color: #b37a64;
+$light-color: #fff;
+$blue-color: #28334d;
+$gray-color: #f5f2f2;
+$text-color: #4d4d4d;
+
+$font-sizes: (
+  'xs': 1.2rem,
+  's': 1.6rem,
+  'm': 2rem,
+  'l': 2.4rem,
+  'xl': 3.2rem,
+  'xxl': 4.5rem,
+  'xxxl': 6rem,
+);
+
+$font-weights: (
+  'regular': 400,
+  'bold': 700,
+);
+
+$font-families: (
+  'sans-serif': #{'Nunito Sans',
+  sans-serif},
+  'serif': #{'Playfair Display',
+  serif},
+);
+
+$border-radius: (
+  's': 0.4rem,
+  'm': 0.8rem,
+  'l': 1.2rem,
+  'circle': 50%,
+);
+
+$breakpoints: (
+  'xs': 360px,
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'hd': 1280px,
+  'fhd': 1920px,
+  'qhd': 2560px,
+  'uhd': 3840px,
+  'fivek': 5120px,
+  'eightk': 7680px,
+);

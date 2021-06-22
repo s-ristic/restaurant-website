@@ -1,0 +1,113 @@
+@use '../utils' as *;
+
+.recipes {
+  @include flex(column, center, flex-start);
+  padding: 6rem 3rem;
+
+  @include mq(lg) {
+    flex-direction: row;
+    align-items: center;
+    padding: 5rem 14rem;
+  }
+
+  &__text {
+    width: 100%;
+
+    @include mq(lg) {
+      max-width: 50rem;
+      margin-right: 15rem;
+    }
+
+    &Btns {
+      a:first-of-type {
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  &__imageBox {
+    position: relative;
+    min-width: 20rem;
+    height: 40vh;
+    margin-top: 8rem;
+    align-self: center;
+
+    @include mq(lg) {
+      min-width: 35rem;
+      height: 70vh;
+      margin-top: -12rem;
+      align-self: initial;
+    }
+
+    img:nth-of-type(1) {
+      border-top-left-radius: 6rem;
+      border-bottom-right-radius: 6rem;
+
+      @include mq(lg) {
+        border-top-left-radius: 8rem;
+        border-bottom-right-radius: 8rem;
+      }
+    }
+
+    img:nth-of-type(2) {
+      /*
+      bottom: 9rem;
+      left: -9rem;
+      width: 15rem;
+      height: 15rem;
+      border-top-left-radius: 6rem;
+      border-bottom-right-radius: 6rem;
+      */
+      bottom: 15%;
+      left: -25%;
+      width: 45%;
+      height: 31%;
+      border-top-left-radius: 33%;
+      border-bottom-right-radius: 33%;
+    }
+
+    img:nth-of-type(3) {
+      /*
+      bottom: 9rem;
+      right: -12rem;
+      width: 20rem;
+      height: 20rem;
+      border-top-right-radius: 7rem;
+      border-bottom-left-radius: 7rem;
+      */
+      bottom: 15%;
+      right: -25%;
+      width: 50%;
+      height: 35%;
+      border-top-right-radius: 33%;
+      border-bottom-left-radius: 33%;
+    }
+
+    img:nth-of-type(4) {
+      /*
+      top: 17rem;
+      left: -9rem;
+      width: 5rem;
+      height: 5rem;
+      */
+      top: 35%;
+      left: -28%;
+      width: 14.9%;
+      height: 10%;
+    }
+
+    img:nth-of-type(5) {
+      /*
+      top: 19rem;
+      left: -5rem;
+      width: 10rem;
+      height: 10rem;
+      */
+      top: 38%;
+      left: -14%;
+      width: 29%;
+      height: 20%;
+    }
+  }
+}

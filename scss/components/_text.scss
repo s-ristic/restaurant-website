@@ -1,0 +1,78 @@
+@use '../utils' as *;
+
+h1 {
+  font-size: font-size(xxl);
+  font-family: font-family(serif);
+  color: $brown-color;
+  margin-bottom: 4rem;
+}
+
+h2 {
+  font-size: font-size(xxl);
+  font-family: font-family(serif);
+  color: $brown-color;
+  margin-bottom: 3rem;
+}
+
+h3 {
+  font-size: font-size(l);
+}
+
+h4 {
+  font-size: font-size(s);
+}
+
+p {
+  color: $text-color;
+  font-size: font-size(s);
+}
+
+.header {
+  p:nth-of-type(2) {
+    margin: 2rem 0 3rem;
+  }
+}
+
+.menu {
+  &__center {
+    h2 {
+      margin-bottom: 4rem;
+    }
+    p {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__bottom {
+    h3 {
+      margin: 2rem 0 1rem;
+      font-family: font-family(serif);
+      color: $brown-color;
+    }
+
+    p {
+      opacity: 0.7;
+      @extend %transition;
+    }
+  }
+}
+
+.recipes {
+  p {
+    margin-bottom: 3rem;
+  }
+}
+
+.testimonial {
+  h2 {
+    font-size: font-size(l);
+  }
+
+  p:first-of-type {
+    font-style: italic;
+  }
+  p:last-of-type {
+    margin: 3rem 0;
+    opacity: 0.7;
+  }
+}

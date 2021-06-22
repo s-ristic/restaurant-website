@@ -1,0 +1,66 @@
+@use '../utils' as *;
+
+.testimonial {
+  position: relative;
+  width: 100%;
+  padding: 6rem 3rem;
+  text-align: center;
+
+  @include mq(lg) {
+    width: 70%;
+    margin: 0 auto;
+    padding: 10rem 0;
+  }
+
+  &__slider {
+    display: flex;
+    width: 75%;
+    margin: 0 auto;
+    overflow: hidden;
+
+    &BtnLeft,
+    &BtnRight {
+      position: absolute;
+      top: 50%;
+      left: 5rem;
+      transform: translateY(-50%);
+      font-size: font-size(l);
+      color: $text-color;
+      cursor: pointer;
+      @extend %transition;
+
+      &:hover {
+        color: $brown-color;
+      }
+    }
+
+    &BtnRight {
+      left: initial;
+      right: 5rem;
+    }
+
+    &Content {
+      min-width: 100%;
+      @extend %transition;
+    }
+
+    &Stars {
+      position: relative;
+      width: 6rem;
+      height: 1rem;
+      margin: 0 auto 3rem;
+    }
+
+    &Icon {
+      position: relative;
+      display: inline-block;
+      font-size: font-size(s);
+      opacity: 0.7;
+      margin-left: -8rem;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
